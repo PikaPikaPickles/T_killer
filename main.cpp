@@ -7,6 +7,7 @@
 #include <time.h>
 #include <list>
 #include <cmath>
+#include "Virus.h"
 bool isCollide(Entity *a,Entity *b)
 {
     return (b->x - a->x)*(b->x - a->x)+ (b->y - a->y)*(b->y - a->y)< (a->R + b->R)*(a->R + b->R);
@@ -18,12 +19,8 @@ int main() {
     app.setFramerateLimit(60);
 
     Texture t1, t2, t3, t4, t5, t6, t7;
-    t1.loadFromFile("/home/yus/CLionProjects/asteros/images/spaceship.png");
     t2.loadFromFile("/home/yus/CLionProjects/asteros/images/background.jpg");
     t3.loadFromFile("/home/yus/CLionProjects/asteros/images/explosions/type_C.png");
-    t4.loadFromFile("/home/yus/CLionProjects/asteros/images/virus.png");
-    t5.loadFromFile("/home/yus/CLionProjects/asteros/images/fire_blue.png");
-    t6.loadFromFile("/home/yus/CLionProjects/asteros/images/rock_small.png");
     t7.loadFromFile("/home/yus/CLionProjects/asteros/images/explosions/type_B.png");
 
     t1.setSmooth(true);
@@ -32,18 +29,13 @@ int main() {
     Sprite background(t2);
 
     Animation sExplosion(t3, 0, 0, 256, 256, 48, 0.5);
-    Animation sRock(t4, 0, 0, 52, 52, 16, 0);
-    Animation sRock_small(t6, 0, 0, 64, 64, 16, 0.2);
-    Animation sAntyBody(t5, 0, 0, 32, 64, 16, 0.8);
-    Animation sYourKletka(t1, 40, 0, 40, 40, 1, 0);
-    Animation sYourKletka_go(t1, 40, 40, 40, 40, 1, 0);
     Animation sExplosion_ship(t7, 0, 0, 192, 192, 64, 0.5);
 
 
     std::list<Entity *> entities;
 
     for (int i = 0; i < 15; i++) {
-        Enemy *a = new Enemy();
+        Virus *a = new Virus();
         a->settings(sRock, rand() % W, rand() % H);
         entities.push_back(a);
     }

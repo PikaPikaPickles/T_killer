@@ -10,6 +10,8 @@
 #include <cmath>
     AntyBody:: AntyBody()
     {
+        t.loadFromFile("/home/yus/CLionProjects/asteros/images/fire_blue.png");
+        Animation sAntyBody(t, 0, 0, 32, 64, 16, 0.8);
         name="AntyBody";
     }
 

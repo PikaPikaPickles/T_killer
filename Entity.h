@@ -14,6 +14,7 @@ using namespace sf;
 
 class Entity: public Animation{
 public:
+    Texture t;
     float x,y,dx,dy,R,angle;
     bool life;
     std::string name;
