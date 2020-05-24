@@ -30,7 +30,7 @@
 };
     void Bac:: update(double z, double zz){
         if(sqrt((this->x - z)*(this->x - z) + (this->y - zz)*(this->y - zz)) < 350) {
-            std::cout<< x<< '\n';
+
             if ((this->x) < z) {
                 this->dx += 0.2;
             }
@@ -45,13 +45,13 @@
                 this->dy -= 0.2;
             }
         }
-        x+=dx;
-        y+=dy;
-
-        if(dx>0)dx-=0.05;
-        if(dx<0)dx+=0.05;
-        if(dy>0)dy-=0.05;
-        if(dy<0)dy+=0.05;
+        x+=dx + rand()%10;
+        y+=dy + rand()%10;
+        angle+=rand()%7;
+        if(dx>1 )dx-=0.05;
+        if(dx<1)dx+=0.05;
+        if(dy>1)dy-=0.05;
+        if(dy<1)dy+=0.05;
         if (x>W) x=0;  if (x<0) x=W;
         if (y>H) y=0;  if (y<0) y=H;
     }

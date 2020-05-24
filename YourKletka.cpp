@@ -11,6 +11,7 @@ using namespace sf;
 
     YourKletka:: YourKletka(){
         name="YourKletka";
+        R=100;
     }
 
     void  YourKletka::update(){
@@ -19,8 +20,8 @@ using namespace sf;
             dy+=sin(angle*DEGTORAD)*0.2;
         }
         else{
-            dx*=0.5;
-            dy*=0.5;
+            dx*=0.90;
+            dy*=0.90;
         }
 
         int maxSpeed=15;
