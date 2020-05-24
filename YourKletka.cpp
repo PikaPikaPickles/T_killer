@@ -10,10 +10,7 @@
 using namespace sf;
 
     YourKletka:: YourKletka(){
-        name="player";
-        t.loadFromFile("/home/yus/CLionProjects/asteros/images/spaceship.png");
-        Animation sYourKletka(t, 40, 0, 40, 40, 1, 0);
-        Animation sYourKletka_go(t, 40, 0, 40, 40, 1, 0);
+        name="YourKletka";
     }
 
     void  YourKletka::update(){
@@ -22,8 +19,8 @@ using namespace sf;
             dy+=sin(angle*DEGTORAD)*0.2;
         }
         else{
-            dx*=0.99;
-            dy*=0.99;
+            dx*=0.5;
+            dy*=0.5;
         }
 
         int maxSpeed=15;

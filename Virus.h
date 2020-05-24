@@ -7,6 +7,7 @@
 #include "Enemy.h"
 
 class Virus: public Enemy {
+public:
     Virus();
 };
 
